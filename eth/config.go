@@ -34,12 +34,12 @@ import (
 // DefaultConfig contains default settings for use on the Ethereum main net.
 var DefaultConfig = Config{
 	SyncMode:             downloader.FastSync,
-	EthashCacheDir:       "ethash",
+	EthashCacheDir:       "yethash",
 	EthashCachesInMem:    2,
 	EthashCachesOnDisk:   3,
 	EthashDatasetsInMem:  1,
 	EthashDatasetsOnDisk: 2,
-	NetworkId:            1,
+	NetworkId:            720,
 	LightPeers:           20,
 	DatabaseCache:        128,
 	GasPrice:             big.NewInt(18 * params.Shannon),
@@ -59,9 +59,9 @@ func init() {
 		}
 	}
 	if runtime.GOOS == "windows" {
-		DefaultConfig.EthashDatasetDir = filepath.Join(home, "AppData", "Ethash")
+		DefaultConfig.EthashDatasetDir = filepath.Join(home, "AppData", "Yethash")
 	} else {
-		DefaultConfig.EthashDatasetDir = filepath.Join(home, ".ethash")
+		DefaultConfig.EthashDatasetDir = filepath.Join(home, ".yethash")
 	}
 }
 
