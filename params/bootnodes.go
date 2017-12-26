@@ -20,7 +20,7 @@ package params
 // the main Ethereum network.
 var MainnetBootnodes = []string{
 	// Youstock Go Bootnodes
-	"enode://a979fb575495b8d6db44f750317d0f4622bf4c2aa3365d6af7c284339968eef29b69ad0dce72a4d8db5ebb4968de0e3bec910127f134779fbcb0cb6d3331163c@50.13.184.145:30303", // IE
+	"enode://91dc80ae78d91e388850834672875d524f60eff4780c902f2a4801e805f5f4d4f5f7a7780d5ddd64c034ebfffced692f55090a97f901aaf95eb1405470a7f8f5@104.210.47.63:30301", // US West 
 }
 
 // TestnetBootnodes are the enode URLs of the P2P bootstrap nodes running on the
