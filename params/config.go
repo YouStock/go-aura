@@ -33,7 +33,7 @@ var (
 	MainnetChainConfig = &ChainConfig{
 		ChainId:        big.NewInt(312),
 		HomesteadBlock: big.NewInt(0),
-		DAOForkBlock:   big.NewInt(0),
+		DAOForkBlock:   nil,
 		DAOForkSupport: true,
 		EIP150Block:    big.NewInt(0),
 		EIP150Hash:     MainnetGenesisHash,
