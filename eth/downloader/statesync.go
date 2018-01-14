@@ -31,7 +31,7 @@ import (
 	"github.com/ethereum/go-ethereum/trie"
 )
 
-// stateReq represents a batch of state fetch requests groupped together into
+// stateReq represents a batch of state fetch requests groupped toauraer into
 // a single data retrieval network packet.
 type stateReq struct {
 	items    []common.Hash              // Hashes of the state items to download

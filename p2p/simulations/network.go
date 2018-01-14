@@ -40,7 +40,7 @@ type NetworkConfig struct {
 // simulated nodes and the connections which exist between them.
 //
 // The Network has a single NodeAdapter which is responsible for actually
-// starting nodes and connecting them together.
+// starting nodes and connecting them toauraer.
 //
 // The Network emits events when nodes are started and stopped, when they are
 // connected and disconnected, and also when messages are sent between nodes.
@@ -267,7 +267,7 @@ func (self *Network) Stop(id discover.NodeID) error {
 	return nil
 }
 
-// Connect connects two nodes together by calling the "admin_addPeer" RPC
+// Connect connects two nodes toauraer by calling the "admin_addPeer" RPC
 // method on the "one" node so that it connects to the "other" node
 func (self *Network) Connect(oneID, otherID discover.NodeID) error {
 	log.Debug(fmt.Sprintf("connecting %s to %s", oneID, otherID))

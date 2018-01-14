@@ -16,7 +16,7 @@ import (
 //go:cgo_import_dynamic libc_getgroups getgroups "libc.so"
 //go:cgo_import_dynamic libc_setgroups setgroups "libc.so"
 //go:cgo_import_dynamic libc_wait4 wait4 "libc.so"
-//go:cgo_import_dynamic libc_gethostname gethostname "libc.so"
+//go:cgo_import_dynamic libc_auraostname auraostname "libc.so"
 //go:cgo_import_dynamic libc_utimes utimes "libc.so"
 //go:cgo_import_dynamic libc_utimensat utimensat "libc.so"
 //go:cgo_import_dynamic libc_fcntl fcntl "libc.so"
@@ -141,7 +141,7 @@ import (
 //go:linkname procgetgroups libc_getgroups
 //go:linkname procsetgroups libc_setgroups
 //go:linkname procwait4 libc_wait4
-//go:linkname procgethostname libc_gethostname
+//go:linkname procauraostname libc_auraostname
 //go:linkname procutimes libc_utimes
 //go:linkname procutimensat libc_utimensat
 //go:linkname procfcntl libc_fcntl
@@ -267,7 +267,7 @@ var (
 	procgetgroups,
 	procsetgroups,
 	procwait4,
-	procgethostname,
+	procauraostname,
 	procutimes,
 	procutimensat,
 	procfcntl,
@@ -443,12 +443,12 @@ func wait4(pid int32, statusp *_C_int, options int, rusage *Rusage) (wpid int32,
 	return
 }
 
-func gethostname(buf []byte) (n int, err error) {
+func auraostname(buf []byte) (n int, err error) {
 	var _p0 *byte
 	if len(buf) > 0 {
 		_p0 = &buf[0]
 	}
-	r0, _, e1 := sysvicall6(uintptr(unsafe.Pointer(&procgethostname)), 2, uintptr(unsafe.Pointer(_p0)), uintptr(len(buf)), 0, 0, 0, 0)
+	r0, _, e1 := sysvicall6(uintptr(unsafe.Pointer(&procauraostname)), 2, uintptr(unsafe.Pointer(_p0)), uintptr(len(buf)), 0, 0, 0, 0)
 	n = int(r0)
 	if e1 != 0 {
 		err = e1
