@@ -37,7 +37,7 @@ will set the URL to:
 Preparers and Responders may be shared and re-used (assuming the underlying decorators support
 sharing and re-use). Performant use is obtained by creating one or more Preparers and Responders
 shared among multiple go-routines, and a single Sender shared among multiple sending go-routines,
-all bound together by means of input / output channels.
+all bound toauraer by means of input / output channels.
 
 Decorators hold their passed state within a closure (such as the path components in the example
 above). Be careful to share Preparers and Responders only in a context where such held state

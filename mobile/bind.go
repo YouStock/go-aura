@@ -16,7 +16,7 @@
 
 // Contains all the wrappers from the bind package.
 
-package geth
+package aura
 
 import (
 	"math/big"
