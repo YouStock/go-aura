@@ -19,7 +19,7 @@ package params
 // MainnetBootnodes are the enode URLs of the P2P bootstrap nodes running on
 // the main Ethereum network.
 var MainnetBootnodes = []string{
-	// Youstock Go Bootnodes
+	// Aura Bootnodes
 	"enode://91dc80ae78d91e388850834672875d524f60eff4780c902f2a4801e805f5f4d4f5f7a7780d5ddd64c034ebfffced692f55090a97f901aaf95eb1405470a7f8f5@104.42.5.59:30303", // US West 
 }
 

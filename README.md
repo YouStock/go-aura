@@ -1,6 +1,6 @@
-## Go Ethereum for YouStock
+## Go Aura 
 
-YouStock golang implementation of the Ethereum protocol. This version connects to the YouStock blockchain by default instead of the main chain.
+Golang implementation of the Aura protocol (ethereum fork).
 
 ## Building the source
 
@@ -24,7 +24,7 @@ The go-ethereum project comes with several wrappers/executables found in the `cm
 
 | Command    | Description |
 |:----------:|-------------|
-| **`aura`** | The main Ethereum CLI client. It is the entry point into the YouStock network (main-, test- or private net), capable of running as a full node (default) archive node (retaining all historical state) or a light node (retrieving data live). It can be used by other processes as a gateway into the Ethereum network via JSON RPC endpoints exposed on top of HTTP, WebSocket and/or IPC transports. `aura --help` and the [CLI Wiki page](https://github.com/ethereum/go-ethereum/wiki/Command-Line-Options) for command line options. |
+| **`aura`** | The main Ethereum CLI client. It is the entry point into the aura network (main-, test- or private net), capable of running as a full node (default) archive node (retaining all historical state) or a light node (retrieving data live). It can be used by other processes as a gateway into the Ethereum network via JSON RPC endpoints exposed on top of HTTP, WebSocket and/or IPC transports. `aura --help` and the [CLI Wiki page](https://github.com/ethereum/go-ethereum/wiki/Command-Line-Options) for command line options. |
 | `abigen` | Source code generator to convert Ethereum contract definitions into easy to use, compile-time type-safe Go packages. It operates on plain [Ethereum contract ABIs](https://github.com/ethereum/wiki/wiki/Ethereum-Contract-ABI) with expanded functionality if the contract bytecode is also available. However it also accepts Solidity source files, making development much more streamlined. Please see our [Native DApps](https://github.com/ethereum/go-ethereum/wiki/Native-DApps:-Go-bindings-to-Ethereum-contracts) wiki page for details. |
 | `bootnode` | Stripped down version of our Ethereum client implementation that only takes part in the network node discovery protocol, but does not run any of the higher level application protocols. It can be used as a lightweight bootstrap node to aid in finding peers in private networks. |
 | `evm` | Developer utility version of the EVM (Ethereum Virtual Machine) that is capable of running bytecode snippets within a configurable environment and execution mode. Its purpose is to allow isolated, fine-grained debugging of EVM opcodes (e.g. `evm --code 60ff60ff --debug`). |
@@ -42,7 +42,7 @@ own Aura instance.
 
 ### Full node on the main Ethereum network
 
-By far the most common scenario is people wanting to simply interact with the YouStock network:
+By far the most common scenario is people wanting to simply interact with the aura network:
 create accounts; transfer funds; deploy and interact with contracts. For this particular use-case
 the user doesn't care about years-old historical data, so we can fast-sync quickly to the current
 state of the network. To do so:
@@ -81,8 +81,8 @@ here.
 
 Specifying the `--testnet` flag however will reconfigure your Aura instance a bit:
 
- * Instead of using the default data directory (`~/.youstock` on Linux for example), Aura will nest
-   itself one level deeper into a `testnet` subfolder (`~/.youstock/testnet` on Linux). Note, on OSX
+ * Instead of using the default data directory (`~/.aura` on Linux for example), Aura will nest
+   itself one level deeper into a `testnet` subfolder (`~/.aura/testnet` on Linux). Note, on OSX
    and Linux this also means that attaching to a running testnet node requires the use of a custom
    endpoint since `aura attach` will try to attach to a production node endpoint by default. E.g.
    `aura attach <datadir>/testnet/aura.ipc`. Windows users are not affected by this.
@@ -112,8 +112,8 @@ $ aura --your-favourite-flags dumpconfig
 
 ### Programatically interfacing Aura nodes
 
-As a developer, sooner rather than later you'll want to start interacting with Aura and the Ethereum
-network via your own programs and not manually through the console. To aid this, Aura has built in
+As a developer, sooner rather than later you'll want to start interacting with Aura
+via your own programs and not manually through the console. To aid this, Aura has built in
 support for a JSON-RPC based APIs ([standard APIs](https://github.com/ethereum/wiki/wiki/JSON-RPC) and
 [Aura specific APIs](https://github.com/ethereum/go-ethereum/wiki/Management-APIs)). These can be
 exposed via HTTP, WebSockets and IPC (unix sockets on unix based platforms, and named pipes on Windows).
