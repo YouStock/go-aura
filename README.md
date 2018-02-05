@@ -1,6 +1,6 @@
 ## Go Ethereum for YouStock
 
-YouStock golang implementation of the Ethereum protocol. This version connects to the YouStock blockchain by default instead of the main chain.
+Golang implementation of the Ethereum protocol for the Aura network. 
 
 ## Building the source
 
