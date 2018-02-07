@@ -21,6 +21,7 @@ package params
 var MainnetBootnodes = []string{
 	// Aura Bootnodes
 	"enode://91dc80ae78d91e388850834672875d524f60eff4780c902f2a4801e805f5f4d4f5f7a7780d5ddd64c034ebfffced692f55090a97f901aaf95eb1405470a7f8f5@104.42.5.59:30303", // US West 
+	"enode://d560938596987ad6f931de28788565405fd6f5121213bfa06682de9f2868850dc2158ad1cddeaac4b7b65c6428fb13eb940c279a468a86552fd6b879d3e2410b@40.79.61.243:30303", // US East 
 }
 
 // TestnetBootnodes are the enode URLs of the P2P bootstrap nodes running on the
